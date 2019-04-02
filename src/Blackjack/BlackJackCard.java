@@ -5,20 +5,37 @@ package Blackjack;
 //Date -
 //Class -
 //Lab  - 
+public class BlackJackCard extends Card {
 
-public class BlackJackCard extends Card
-{
-  	//constructors
+    //constructors
 
+    public BlackJackCard() {
+        super();
+    }
 
+    public BlackJackCard(int Face, String Suit) {
+        super(Face, Suit);
+    }
 
-  	public int getValue()
-  	{
-  		//enables you to build the value for the game into the card
-  		//this makes writing the whole program a little easier
+    /**
+     * Gets the value of a blackjack card.
+     *
+     * @return the value of the card
+     */
+    @Override
+    public int getValue() {
+        if (super.getFace() == 1) {
+            return 11;
+        }
+        if (super.getFace() > 10) {
+            return 10;
+        }
+        return super.getFace();
+    }
+    
+    @Override
+    public String toString() {
+        return super.toString() + " | value = " + getValue();
+    }
 
-
-		return 0;
-  	}
-  	
- }
+}

@@ -13,10 +13,8 @@ public class DeckTestOne
 {
 	public static void main( String args[] )
 	{
-		Deck deck = new Deck();	
-		for( int i=0; i<Deck.NUMCARDS; i++ ) {
-		  out.println(deck.nextCard());
-		}
+		Deck deck = new Deck();
+                out.println(deck);
 		
 		out.println("\n\n");
 		
@@ -28,6 +26,6 @@ public class DeckTestOne
 		
 		
 		out.println("\n\ntoString");
-		out.println(deck);							
+		out.println(deck);	
 	}
 }

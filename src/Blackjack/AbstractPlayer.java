@@ -7,7 +7,7 @@ package Blackjack;
 //Lab  - 
 
 import java.util.ArrayList;
-import BlackJack.Card;
+//import Blackjack.Card;
 
 public abstract class AbstractPlayer implements Playerable
 {
@@ -18,8 +18,7 @@ public abstract class AbstractPlayer implements Playerable
 
    public  void addCardToHand( Card temp )
    {
-
-
+       hand.add(temp);
    }
 
    public  void resetHand( )

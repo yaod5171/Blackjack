@@ -56,9 +56,8 @@ public abstract class Card {
 
     public abstract int getValue();
 
-    public boolean equals(Object obj) {
-
-        return false;
+    public boolean equals(Card card) {
+        return (getSuit().equals(card.getSuit()) && getFace() == card.getFace());
     }
 
   	//toString
