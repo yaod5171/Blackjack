@@ -31,7 +31,11 @@ class Dealer extends AbstractPlayer {
     //hit method goes here
     @Override
     public boolean hit() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (super.getHandValue() < 17) {
+            super.addCardToHand(deal());
+            return true;
+        }
+        return false;
     }
 
 }

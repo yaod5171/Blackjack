@@ -12,21 +12,36 @@ import java.util.Scanner;
 //define Player class here 
 class Player extends AbstractPlayer {
 
-	//constructors
+    //constructors
     public Player() {
         super();
     }
+
     public Player(ArrayList<Card> Hand) {
         super(Hand);
     }
+
     public Player(ArrayList<Card> Hand, int WinCount) {
         super(Hand, WinCount);
     }
-    
-	//hit method goes here
+
+    //hit method goes here
     @Override
     public boolean hit() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Scanner scan = new Scanner(System.in);
+        String response;
+        while (true) {
+            System.out.println("Current hand: " + super.getHand() + " - value " + super.getHandValue());
+            System.out.print("Do you want to hit? (y/n) ");
+            response = scan.nextLine().toUpperCase().trim();
+            if (response.equals("Y")) {
+                return true;
+            } else if (response.equals("N")) {
+                return false;
+            } else {
+                System.out.println("Not a valid response");
+            }
+        }
     }
 
 }

@@ -5,62 +5,67 @@ package Blackjack;
 //Date -
 //Class -
 //Lab  - 
-
 import java.util.ArrayList;
 //import Blackjack.Card;
 
-public abstract class AbstractPlayer implements Playerable
-{
-   private ArrayList<Card> hand;
-   private int winCount;
+public abstract class AbstractPlayer implements Playerable {
 
-   //constructors
-   public AbstractPlayer() {
-       hand = new ArrayList();
-       winCount = 0;
-   }
-   public AbstractPlayer(ArrayList<Card> Hand) {
-       hand = Hand;
-       winCount = 0;
-   }
-   public AbstractPlayer(ArrayList<Card> Hand, int WinCount) {
-       hand = Hand;
-       winCount = WinCount;
-   }
-   
+    private ArrayList<Card> hand;
+    private int winCount;
 
-   public  void addCardToHand( Card temp )
-   {
-       hand.add(temp);
-   }
+    //constructors
+    public AbstractPlayer() {
+        hand = new ArrayList();
+        winCount = 0;
+    }
 
-   public  void resetHand( )
-   {
-       hand.clear();
-   }
+    public AbstractPlayer(ArrayList<Card> Hand) {
+        hand = Hand;
+        winCount = 0;
+    }
 
-   public  void setWinCount( int numwins )
-   {
-       winCount = numwins;
-   }
+    public AbstractPlayer(ArrayList<Card> Hand, int WinCount) {
+        hand = Hand;
+        winCount = WinCount;
+    }
 
-   public int getWinCount() { return winCount; }
-   
-   public ArrayList<Card> getHand() { return hand; }
+    public void addCardToHand(Card temp) {
+        hand.add(temp);
+    }
 
-   public int getHandSize() { return hand.size(); }
+    public void resetHand() {
+        hand.clear();
+    }
 
-   public int getHandValue()
-   {
-      int total=0;
-      for (Card c: hand) {
-          total += c.getValue();
-      }
-      return total;
-   }
+    public void setWinCount(int numwins) {
+        winCount = numwins;
+    }
 
-   public String toString()
-   {
-      return "hand = " + hand.toString() + " \n- " + getHandValue() + " # wins " + winCount;
-   }
+    public void win() {
+        winCount++;
+    }
+
+    public int getWinCount() {
+        return winCount;
+    }
+
+    public ArrayList<Card> getHand() {
+        return hand;
+    }
+
+    public int getHandSize() {
+        return hand.size();
+    }
+
+    public int getHandValue() {
+        int total = 0;
+        for (Card c : hand) {
+            total += c.getValue();
+        }
+        return total;
+    }
+
+    public String toString() {
+        return "hand = " + hand.toString() + " \n- " + getHandValue() + " # wins " + winCount;
+    }
 }
